@@ -1,6 +1,8 @@
 @import "./reset";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import "./variables";
+@import "greeting";
+
 *{
   font-family: -apple-system, 'Noto Sans KR', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
@@ -17,47 +19,7 @@ body {
 .hidden {
   display: none;
 }
-#greeting_name{
-  #greeting{
-    margin-bottom: 40px;
-    font-size: 50px;
-  }
-  
-  &:focus-within .input-underline{
-    width: 100%;
-  }
-  
-  #login-form {
-    position: relative;
-    .nameinput{  
-      border: none;
-      background-color: inherit;
-      width: 250px;
-      height: 50px;
-      font-size: 30px;
-      font-weight: 300;
-      text-align: center;
-      padding-left: 10px;
-    }
-    .nameinput::placeholder{
-      font-size: 30px;
-      font-weight: 300;
-      transition: 0.2s;
-      color: white;
-      opacity: 0.95;
-    }
-    .nameinput:focus::placeholder{
-      opacity: 0;
-    }
-  }
-  .input-underline{
-    background-color: white;
-    width: 0%;
-    height: 1px;
-    margin-bottom: 40px;
-    transition: all 0.5s;
-  }
-}
+
 
 #main{
   display: grid;
