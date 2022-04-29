@@ -6,3 +6,10 @@
   border-right: 1px solid rgba(255,255,255,0.2);
   backdrop-filter: blur(25px);
 }
+%placeholder{
+  font-size: 30px;
+  font-weight: 300;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}

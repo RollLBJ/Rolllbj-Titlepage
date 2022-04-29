@@ -19,7 +19,7 @@ function onLoginSubmit(event) {
 
 function paintGreetings(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME); // 인사말 태그(h1)을 보이게 하고
-  greeting.innerText = `Hello ${username}`; // 인사말 텍스트를 innerText로 추가한다.
+  greeting.innerText = `안녕하세요 ${username}님`; // 인사말 텍스트를 innerText로 추가한다.
 }
 
 if (savedUsername === null) {

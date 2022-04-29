@@ -1,6 +1,6 @@
 #greeting_name{
+  margin-bottom: 40px;
   #greeting{
-    margin-bottom: 40px;
     font-size: 50px;
   }
   
@@ -21,21 +21,10 @@
       padding-left: 10px;
     }
     .nameinput::placeholder{
-      font-size: 30px;
-      font-weight: 300;
-      transition: 0.2s;
-      color: white;
-      opacity: 0.95;
+      @extend %placeholder;
     }
     .nameinput:focus::placeholder{
       opacity: 0;
     }
-  }
-  .input-underline{
-    background-color: white;
-    width: 0%;
-    height: 1px;
-    margin-bottom: 40px;
-    transition: all 0.5s;
   }
 }

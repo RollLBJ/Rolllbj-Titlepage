@@ -53,6 +53,85 @@ input:focus {
   outline: none;
 }
 
+#greeting_name #login-form .nameinput::-webkit-input-placeholder, #main #todo-form input::-webkit-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput:-ms-input-placeholder, #main #todo-form input:-ms-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput::-ms-input-placeholder, #main #todo-form input::-ms-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput::placeholder, #main #todo-form input::placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name {
+  margin-bottom: 40px;
+}
+
+#greeting_name #greeting {
+  font-size: 50px;
+}
+
+#greeting_name:focus-within .input-underline {
+  width: 100%;
+}
+
+#greeting_name #login-form {
+  position: relative;
+}
+
+#greeting_name #login-form .nameinput {
+  border: none;
+  background-color: inherit;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding-left: 10px;
+}
+
+#greeting_name #login-form .nameinput:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus::placeholder {
+  opacity: 0;
+}
+
 * {
   font-family: -apple-system, 'Noto Sans KR', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: white;
@@ -81,87 +160,10 @@ body {
   display: none;
 }
 
-#greeting_name #greeting {
-  margin-bottom: 40px;
-  font-size: 50px;
-}
-
-#greeting_name:focus-within .input-underline {
-  width: 100%;
-}
-
-#greeting_name #login-form {
-  position: relative;
-}
-
-#greeting_name #login-form .nameinput {
-  border: none;
-  background-color: inherit;
-  width: 250px;
-  height: 50px;
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-  padding-left: 10px;
-}
-
-#greeting_name #login-form .nameinput::-webkit-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  opacity: 0.95;
-}
-
-#greeting_name #login-form .nameinput:-ms-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  opacity: 0.95;
-}
-
-#greeting_name #login-form .nameinput::-ms-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  opacity: 0.95;
-}
-
-#greeting_name #login-form .nameinput::placeholder {
-  font-size: 30px;
-  font-weight: 300;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  color: white;
-  opacity: 0.95;
-}
-
-#greeting_name #login-form .nameinput:focus::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-#greeting_name #login-form .nameinput:focus:-ms-input-placeholder {
-  opacity: 0;
-}
-
-#greeting_name #login-form .nameinput:focus::-ms-input-placeholder {
-  opacity: 0;
-}
-
-#greeting_name #login-form .nameinput:focus::placeholder {
-  opacity: 0;
-}
-
-#greeting_name .input-underline {
+.input-underline {
   background-color: white;
   width: 0%;
   height: 1px;
-  margin-bottom: 40px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
@@ -169,10 +171,11 @@ body {
 #main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (200px)[3];
-      grid-template-columns: repeat(3, 200px);
+  -ms-grid-columns: (200px)[4];
+      grid-template-columns: repeat(4, 200px);
   -ms-grid-rows: (200px)[2];
       grid-template-rows: repeat(2, 200px);
+      grid-template-areas: "clock todo quote quote" "weather todo . .";
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -181,8 +184,8 @@ body {
 }
 
 #main .main__item {
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;
   margin: 15px;
   display: -webkit-box;
@@ -200,6 +203,9 @@ body {
 }
 
 #main #digital-clock {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: clock;
   font-size: 30px;
   font-weight: 300;
   -webkit-box-orient: vertical;
@@ -213,6 +219,10 @@ body {
 }
 
 #main #todo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: todo;
   grid-row: 1 / -1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -221,14 +231,59 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 30px 10px;
 }
 
 #main #todo-form input {
   background-color: inherit;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  padding-bottom: 8px;
+}
+
+#main #todo-form input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+#main #todo-form input:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+#main #todo-form input::-ms-input-placeholder {
+  font-size: 16px;
+}
+
+#main #todo-form input::placeholder {
+  font-size: 16px;
+}
+
+#main #todo-form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+#main #todo-form input:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+#main #todo-form input:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+#main #todo-form input:focus::placeholder {
+  opacity: 0;
+}
+
+#main .input-underline {
+  width: 0%;
+  color: white;
+}
+
+#main:focus-within .input-underline {
+  width: 100%;
 }
 
 #main #todo-list {
@@ -239,29 +294,57 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 30px;
   width: 100%;
 }
 
 #main #todo-list li {
-  padding: 8px 0;
-  margin: 8px 0;
+  padding: 8px 0px;
+  margin: 8px 0px;
   border-radius: 15px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #main #todo-list li:hover {
-  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
 #main #todo-list li span {
   margin-right: 5px;
 }
 
+#main #todo-list li button {
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1px;
+}
+
+#main #todo-list li button:hover {
+  color: red;
+}
+
 #main #quote {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: quote;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -270,5 +353,11 @@ body {
 
 #main #quote span {
   text-align: justify;
+}
+
+#main #weather {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: weather;
 }
 /*# sourceMappingURL=style.css.map */
