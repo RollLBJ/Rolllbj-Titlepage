@@ -6,6 +6,8 @@ const link = document.querySelector('a');
 
 const HIDDEN_CLASSNAME = 'hidden';
 const USERNAME_KEY = 'username';
+// Data from localStorage
+const savedUsername = localStorage.getItem('username'); // 새로고침이 되면 로컬 스토리지에 있는 데이터를 받아옴 (없을 경우 null 들어옴)
 
 function onLoginSubmit(event) {
   event.preventDefault(); // 새로고침 방지(기본 동작 방지)
@@ -19,9 +21,6 @@ function paintGreetings(username) {
   greeting.classList.remove(HIDDEN_CLASSNAME); // 인사말 태그(h1)을 보이게 하고
   greeting.innerText = `Hello ${username}`; // 인사말 텍스트를 innerText로 추가한다.
 }
-
-// Data from localStorage
-const savedUsername = localStorage.getItem('username'); // 새로고침이 되면 로컬 스토리지에 있는 데이터를 받아옴 (없을 경우 null 들어옴)
 
 if (savedUsername === null) {
   //저장된 이름이 없을 경우
