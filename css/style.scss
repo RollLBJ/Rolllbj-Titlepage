@@ -120,6 +120,7 @@ body {
       }
     }
   }
+
   #quote{
     grid-area: quote;
     flex-direction: column;
@@ -129,5 +130,17 @@ body {
   }
   #weather{
     grid-area: weather;
+    flex-direction: column;
+    padding-top: 10px;
+    .weather-icon{
+      // margin-bottom: 20px;
+    }
+    .weather-location{
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    .weather-data{
+      font-size: 15px;
+    }
   }
 }
