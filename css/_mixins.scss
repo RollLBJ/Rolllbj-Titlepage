@@ -1,0 +1,15 @@
+$maxIphone: 390px;
+$minTabletVertical: $maxIphone + 1;
+$maxTabletVertical: 850px;
+
+@mixin responsive($device){
+	@if $device == "iphone" {
+		@media screen and (min-width: 0px) and (max-width: $maxIphone){
+			@content;
+		}
+	} @else if $device == "tabletVertical"{
+		@media screen and (min-width: $minTabletVertical) and (max-width: $maxTabletVertical){
+			@content;
+		}
+	}
+}

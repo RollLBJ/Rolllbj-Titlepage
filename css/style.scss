@@ -17,6 +17,12 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(315deg, #ffec61, #f321d7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @include responsive("iphone"){
+    height: fit-content;
+    padding-top: 55%;
+  }
 }
 .hidden {
   display: none;
@@ -37,6 +43,20 @@ body {
   "clock todo quote quote"
   "weather todo . .";
   @include responsive("iphone"){
+    grid-template-columns: repeat(1,200px);
+    grid-template-rows: repeat(8,200px);
+    grid-template-areas: 
+    "clock"
+    "weather"
+    "todo"
+    "todo"
+    "quote"
+    "quote"
+    "."
+    "."
+    ;
+  }
+  @include responsive("tabletVertical"){
     grid-template-columns: repeat(2,200px);
     grid-template-rows: repeat(4,200px);
     grid-template-areas: 
@@ -72,8 +92,6 @@ body {
   }
   #todo{
     grid-area: todo;
-    grid-row: 1 / -1;
-    grid-column: 2 / 3;
     flex-direction: column;
     justify-content: flex-start;
     padding: 30px 10px;
