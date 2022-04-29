@@ -1,6 +1,7 @@
 const loginForm = document.querySelector('#login-form');
 const loginInput = document.querySelector('#login-form input');
 const greeting = document.querySelector('#greeting');
+const mainScreen = document.querySelector('#main');
 
 const link = document.querySelector('a');
 
@@ -15,10 +16,14 @@ function onLoginSubmit(event) {
   localStorage.setItem(USERNAME_KEY, typedUsername); // 로컬 저장소에 데이터 저장
   loginForm.classList.add(HIDDEN_CLASSNAME); // 이름을 입력받았으니 입력 폼을 안보이게 숨김
   paintGreetings(typedUsername); // 인사말을 출력하는 함수에 입력받은 이름을 넘겨줌
+
+  mainScreen.style.transform = `translateX(${0}%)`;
+  loginForm.style.animation = `greetind-submited`;
 }
 
 function paintGreetings(username) {
-  greeting.classList.remove(HIDDEN_CLASSNAME); // 인사말 태그(h1)을 보이게 하고
+  // greeting.classList.remove(HIDDEN_CLASSNAME); // 인사말 태그(h1)을 보이게 하고
+  greeting.style.opacity = 1;
   greeting.innerText = `안녕하세요 ${username}님`; // 인사말 텍스트를 innerText로 추가한다.
 }
 
@@ -32,4 +37,5 @@ if (savedUsername === null) {
 } else {
   // show the greeting
   paintGreetings(savedUsername); // 저장된 이름이 있다면 (!=null) 인사말을 출력함.
+  mainScreen.style.transform = `translateX(${0}%)`;
 }

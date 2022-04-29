@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import "./variables";
 @import "_extends";
+@import "_mixins";
 @import "greeting";
 
 *{
@@ -35,9 +36,20 @@ body {
   grid-template-areas: 
   "clock todo quote quote"
   "weather todo . .";
+  @include responsive("iphone"){
+    grid-template-columns: repeat(2,200px);
+    grid-template-rows: repeat(4,200px);
+    grid-template-areas: 
+    "clock todo"
+    "weather todo"
+    "quote quote"
+    ". .";
+  }
   justify-content: center;
   height: 50%;
   width: 80%;
+  transform: translateX(-100%);
+  transition: 1s;
   .main__item{
     box-shadow: $boxshadow;
     border-radius: 15px;
@@ -65,61 +77,64 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     padding: 30px 10px;
-  }
-  #todo-form input{
-    background-color: inherit;
-    border: none;
-    transition: all 0.5s;
-    padding-bottom: 8px;
-    &::placeholder{
-      @extend %placeholder;
-      font-size: 16px;
+    #todo-form{
+      padding-left: 13px;
     }
-    &:focus::placeholder{
-      opacity: 0;
+    #todo-form input{
+      background-color: inherit;
+      border: none;
+      transition: all 0.5s;
+      padding-bottom: 8px;
+      &::placeholder{
+        @extend %placeholder;
+        font-size: 16px;
+      }
+      &:focus::placeholder{
+        opacity: 0;
+      }
+      
     }
-    
+    #todo-list{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      li{
+        padding: 8px 0px;
+        margin: 8px 0px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+          box-shadow: $boxshadow;
+        }
+        span{
+          margin-right: 5px;
+        }
+        button{
+          cursor: pointer;
+          background-color: transparent;
+          transition: 0.2s;
+          font-size: 18px;
+          display: flex;
+          padding-top: 1px;
+        }
+        button:hover{
+          color:red;
+        }
+      }
+    }
   }
   .input-underline{
     width: 0%;
     color: white;
   }
   &:focus-within .input-underline{
-    width: 100%;
+    width: 90%;
   }
 
-  #todo-list{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    li{
-      padding: 8px 0px;
-      margin: 8px 0px;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: 0.3s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &:hover{
-        box-shadow: $boxshadow;
-      }
-      span{
-        margin-right: 5px;
-      }
-      button{
-        cursor: pointer;
-        background-color: transparent;
-        transition: 0.2s;
-        font-size: 18px;
-        display: flex;
-        padding-top: 1px;
-      }
-      button:hover{
-        color:red;
-      }
-    }
-  }
 
   #quote{
     grid-area: quote;

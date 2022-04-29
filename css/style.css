@@ -53,7 +53,7 @@ input:focus {
   outline: none;
 }
 
-#greeting_name #login-form .nameinput::-webkit-input-placeholder, #main #todo-form input::-webkit-input-placeholder {
+#greeting_name #login-form .nameinput::-webkit-input-placeholder, #main #todo #todo-form input::-webkit-input-placeholder {
   font-size: 30px;
   font-weight: 300;
   -webkit-transition: 0.2s;
@@ -62,7 +62,7 @@ input:focus {
   opacity: 0.95;
 }
 
-#greeting_name #login-form .nameinput:-ms-input-placeholder, #main #todo-form input:-ms-input-placeholder {
+#greeting_name #login-form .nameinput:-ms-input-placeholder, #main #todo #todo-form input:-ms-input-placeholder {
   font-size: 30px;
   font-weight: 300;
   -webkit-transition: 0.2s;
@@ -71,7 +71,7 @@ input:focus {
   opacity: 0.95;
 }
 
-#greeting_name #login-form .nameinput::-ms-input-placeholder, #main #todo-form input::-ms-input-placeholder {
+#greeting_name #login-form .nameinput::-ms-input-placeholder, #main #todo #todo-form input::-ms-input-placeholder {
   font-size: 30px;
   font-weight: 300;
   -webkit-transition: 0.2s;
@@ -80,7 +80,7 @@ input:focus {
   opacity: 0.95;
 }
 
-#greeting_name #login-form .nameinput::placeholder, #main #todo-form input::placeholder {
+#greeting_name #login-form .nameinput::placeholder, #main #todo #todo-form input::placeholder {
   font-size: 30px;
   font-weight: 300;
   -webkit-transition: 0.2s;
@@ -94,7 +94,12 @@ input:focus {
 }
 
 #greeting_name #greeting {
-  font-size: 50px;
+  position: relative;
+  top: 10%;
+  font-size: 40px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
 }
 
 #greeting_name:focus-within .input-underline {
@@ -103,6 +108,7 @@ input:focus {
 
 #greeting_name #login-form {
   position: relative;
+  top: 20vh;
 }
 
 #greeting_name #login-form .nameinput {
@@ -181,6 +187,20 @@ body {
           justify-content: center;
   height: 50%;
   width: 80%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@media screen and (min-width: 500px) and (max-width: 690px) {
+  #main {
+    -ms-grid-columns: (200px)[2];
+        grid-template-columns: repeat(2, 200px);
+    -ms-grid-rows: (200px)[4];
+        grid-template-rows: repeat(4, 200px);
+        grid-template-areas: "clock todo" "weather todo" "quote quote" ". .";
+  }
 }
 
 #main .main__item {
@@ -237,7 +257,11 @@ body {
   padding: 30px 10px;
 }
 
-#main #todo-form input {
+#main #todo #todo-form {
+  padding-left: 13px;
+}
+
+#main #todo #todo-form input {
   background-color: inherit;
   border: none;
   -webkit-transition: all 0.5s;
@@ -245,48 +269,39 @@ body {
   padding-bottom: 8px;
 }
 
-#main #todo-form input::-webkit-input-placeholder {
+#main #todo #todo-form input::-webkit-input-placeholder {
   font-size: 16px;
 }
 
-#main #todo-form input:-ms-input-placeholder {
+#main #todo #todo-form input:-ms-input-placeholder {
   font-size: 16px;
 }
 
-#main #todo-form input::-ms-input-placeholder {
+#main #todo #todo-form input::-ms-input-placeholder {
   font-size: 16px;
 }
 
-#main #todo-form input::placeholder {
+#main #todo #todo-form input::placeholder {
   font-size: 16px;
 }
 
-#main #todo-form input:focus::-webkit-input-placeholder {
+#main #todo #todo-form input:focus::-webkit-input-placeholder {
   opacity: 0;
 }
 
-#main #todo-form input:focus:-ms-input-placeholder {
+#main #todo #todo-form input:focus:-ms-input-placeholder {
   opacity: 0;
 }
 
-#main #todo-form input:focus::-ms-input-placeholder {
+#main #todo #todo-form input:focus::-ms-input-placeholder {
   opacity: 0;
 }
 
-#main #todo-form input:focus::placeholder {
+#main #todo #todo-form input:focus::placeholder {
   opacity: 0;
 }
 
-#main .input-underline {
-  width: 0%;
-  color: white;
-}
-
-#main:focus-within .input-underline {
-  width: 100%;
-}
-
-#main #todo-list {
+#main #todo #todo-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,7 +312,7 @@ body {
   width: 100%;
 }
 
-#main #todo-list li {
+#main #todo #todo-list li {
   padding: 8px 0px;
   margin: 8px 0px;
   border-radius: 15px;
@@ -315,16 +330,16 @@ body {
           align-items: center;
 }
 
-#main #todo-list li:hover {
+#main #todo #todo-list li:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
 }
 
-#main #todo-list li span {
+#main #todo #todo-list li span {
   margin-right: 5px;
 }
 
-#main #todo-list li button {
+#main #todo #todo-list li button {
   cursor: pointer;
   background-color: transparent;
   -webkit-transition: 0.2s;
@@ -336,8 +351,17 @@ body {
   padding-top: 1px;
 }
 
-#main #todo-list li button:hover {
+#main #todo #todo-list li button:hover {
   color: red;
+}
+
+#main .input-underline {
+  width: 0%;
+  color: white;
+}
+
+#main:focus-within .input-underline {
+  width: 90%;
 }
 
 #main #quote {

@@ -1,7 +1,11 @@
 #greeting_name{
   margin-bottom: 40px;
   #greeting{
-    font-size: 50px;
+    position: relative;
+    top: 10%;
+    font-size: 40px;
+    transition: 1s;
+    opacity: 0;
   }
   
   &:focus-within .input-underline{
@@ -10,6 +14,7 @@
   
   #login-form {
     position: relative;
+    top: 20vh;
     .nameinput{  
       border: none;
       background-color: inherit;
