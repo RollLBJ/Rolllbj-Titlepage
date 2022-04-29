@@ -8,7 +8,7 @@
     <title>Rolllbj Titlepage</title>
   </head>
   <body>
-    <header>
+    <header id="greeting_name">
       <h1 id="greeting" class="hidden center"></h1>
       <form id="login-form" class="hidden center">
         <input
@@ -16,27 +16,31 @@
           type="text"
           placeholder="이름을 알려주세요"
           requried="requried"
+          class="nameinput"
         />
+        <!-- <h1 class="placeholder">이름을 알려주세요</h1> -->
         <input type="submit" value="Log in" class="hidden" />
       </form>
-      <div class="underline"></div>
+      <div class="input-underline"></div>
     </header>
 
-    <main id="main">
-      <h2 id="digital-clock" class="center">00:00:00</h2>
-      <form id="todo-form" class="center">
-        <input type="text" placeholder="to-do" />
-      </form>
-      <ul id="todo-list" class="center"></ul>
-      <div id="quote">
+    <ul id="main">
+      <li id="digital-clock" class="main__item">00:00:00</li>
+      <li id="todo" class="main__item">
+        <form id="todo-form">
+          <input type="text" placeholder="to-do" />
+        </form>
+        <ul id="todo-list"></ul>
+      </li>
+      <li id="quote" class="main__item">
         <span></span>
         <span></span>
-      </div>
-      <div id="weather">
+      </li>
+      <li id="weather" class="main__item">
         <span></span>
         <span></span>
-      </div>
-    </main>
+      </li>
+    </ul>
 
     <script src="/js/app.js"></script>
     <script src="/js/clock.js"></script>

@@ -55,7 +55,8 @@ input:focus {
 
 * {
   font-family: -apple-system, 'Noto Sans KR', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0.95;
 }
 
 body {
@@ -73,76 +74,113 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: linear-gradient(315deg, #ffec61, #f321d7);
 }
 
 .hidden {
   display: none;
 }
 
-header #greeting {
+#greeting_name #greeting {
   margin-bottom: 40px;
-}
-
-header #greeting {
   font-size: 50px;
 }
 
-header .underline {
-  content: " ";
-  background-color: rgba(0, 0, 0, 0.8);
+#greeting_name:focus-within .input-underline {
+  width: 100%;
+}
+
+#greeting_name #login-form {
+  position: relative;
+}
+
+#greeting_name #login-form .nameinput {
+  border: none;
+  background-color: inherit;
+  width: 250px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding-left: 10px;
+}
+
+#greeting_name #login-form .nameinput::-webkit-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput:-ms-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput::-ms-input-placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput::placeholder {
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  color: white;
+  opacity: 0.95;
+}
+
+#greeting_name #login-form .nameinput:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus:-ms-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus::-ms-input-placeholder {
+  opacity: 0;
+}
+
+#greeting_name #login-form .nameinput:focus::placeholder {
+  opacity: 0;
+}
+
+#greeting_name .input-underline {
+  background-color: white;
   width: 0%;
   height: 1px;
   margin-bottom: 40px;
-  -webkit-transition: width 0.5s;
-  transition: width 0.5s;
-  -webkit-transform: translateX(100%) scaleX(1);
-          transform: translateX(100%) scaleX(1);
-}
-
-header:focus-within .underline {
-  width: 100%;
-  -webkit-transform: translateX(0%) scaleX(-1);
-          transform: translateX(0%) scaleX(-1);
-}
-
-header #login-form input {
-  border: none;
-  width: 300px;
-  height: 50px;
-}
-
-header #login-form input::-webkit-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-}
-
-header #login-form input:-ms-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-}
-
-header #login-form input::-ms-input-placeholder {
-  font-size: 30px;
-  font-weight: 300;
-}
-
-header #login-form input::placeholder {
-  font-size: 30px;
-  font-weight: 300;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 #main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
+  -ms-grid-columns: (200px)[3];
+      grid-template-columns: repeat(3, 200px);
+  -ms-grid-rows: (200px)[2];
+      grid-template-rows: repeat(2, 200px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 50%;
   width: 80%;
 }
 
-#main > * {
+#main .main__item {
   -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 15px;
@@ -156,10 +194,81 @@ header #login-form input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  text-align: center;
 }
 
 #main #digital-clock {
   font-size: 30px;
-  font-weight: 400;
+  font-weight: 300;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #digital-clock p:first-child {
+  margin-bottom: 15px;
+}
+
+#main #todo {
+  grid-row: 1 / -1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #todo-form input {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#main #todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 30px;
+  width: 100%;
+}
+
+#main #todo-list li {
+  padding: 8px 0;
+  margin: 8px 0;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#main #todo-list li:hover {
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#main #todo-list li span {
+  margin-right: 5px;
+}
+
+#main #quote {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #quote span {
+  text-align: justify;
 }
 /*# sourceMappingURL=style.css.map */
